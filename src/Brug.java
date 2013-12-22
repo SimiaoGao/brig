@@ -65,7 +65,29 @@ public class Brug {
 	}
 	
 
-	
+	static HashMap<String, String> pairItems(HashMap<Integer, String> map) {
+
+		HashMap<String, String> newMap = new HashMap<String, String>();
+		
+		for (Entry<Integer, String> entry : map.entrySet()) {
+			
+			String[] item1 = entry.getValue().split(",");
+			String[] item2 = entry.getValue().split(",");
+			
+						
+			for( int i = 2; i < item1.length; i+=2) {
+				for( int j = 2; j < item2.length; j+=2) {
+					
+					if(i != j) {
+						newMap.put(item1[i] + "," + item2[j], item1[i+1] + "," + item2[j+1]);
+					}
+				}
+			}
+		}
+		
+		return newMap;
+		
+	}
 	
 	
 	
@@ -81,8 +103,9 @@ public class Brug {
 	
 		HashMap<Integer, String> groupByUserMap = groupByUser(dataFile);
 		HashMap<Integer, String> addRatingsCountMap = countRatingsPerUser(groupByUserMap);
+		HashMap<String, String> pairItemsMap = pairItems(addRatingsCountMap);
 		
-		for (Entry<Integer, String> entry : addRatingsCountMap.entrySet()) {
+		for (Entry<String, String> entry : pairItemsMap.entrySet()) {
 		    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
 		}
 		
