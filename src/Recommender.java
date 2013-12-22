@@ -3,6 +3,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -50,7 +53,8 @@ public class Recommender {
 		return null;
 	}
 
-	static HashMap<String, String> pairRatingsPerUser(HashMap<Integer, String> map) {
+	static HashMap<String, String> pairRatingsPerUser(
+			HashMap<Integer, String> map) {
 
 		HashMap<String, String> pairs = new HashMap<String, String>();
 
@@ -78,43 +82,77 @@ public class Recommender {
 			}
 
 		}
-		
+
 		return pairs;
 	}
-	
-	static HashMap<String, String> itemCorrelations( HashMap<String, String> map) {
-		
+
+	static HashMap<String, String> itemCorrelations(HashMap<String, String> map) {
+
 		HashMap<String, String> correlations = new HashMap<String, String>();
-		
+
+		DecimalFormat df = new DecimalFormat("#.###");
+
 		double sumXY, sumX, sumY, sumXX, sumYY, n;
-		
+
 		for (Entry<String, String> entry : map.entrySet()) {
-			sumXY = 0.0; sumX = 0.0; sumY = 0.0; sumXX = 0.0; sumYY = 0.0; n = 0.0;
-			
+			sumXY = 0.0;
+			sumX = 0.0;
+			sumY = 0.0;
+			sumXX = 0.0;
+			sumYY = 0.0;
+			n = 0.0;
+
 			String[] s = entry.getValue().split(",");
-			
-			for( int i =0; i < s.length; i +=2) {
-				
+
+			for (int i = 0; i < s.length; i += 2) {
+
 				double x = Double.parseDouble(s[i]);
-				double y = Double.parseDouble(s[i+1]);
-				
-				sumYY += y*y;
-				sumXX += x*x;
-				sumXY += x*y;
+				double y = Double.parseDouble(s[i + 1]);
+
+				sumYY += y * y;
+				sumXX += x * x;
+				sumXY += x * y;
 				sumX += x;
 				sumY += y;
 				n++;
 			}
-			
-			if( n > 1) {
-			double correlation = (n*sumXY - sumX*sumY) / ( Math.sqrt(n*sumXX - (sumX*sumX))*Math.sqrt(n*sumYY - (sumY*sumY)));
-			if(( Math.sqrt(n*sumXX - (sumX*sumX))*Math.sqrt(n*sumYY - (sumY*sumY))) == 0)
-				correlation = 0;
-			correlations.put(entry.getKey(), correlation + "," + n);
+
+			if (n > 1) {
+				double correlation = (n * sumXY - sumX * sumY)
+						/ (Math.sqrt(n * sumXX - (sumX * sumX)) * Math.sqrt(n
+								* sumYY - (sumY * sumY)));
+				if ((Math.sqrt(n * sumXX - (sumX * sumX)) * Math.sqrt(n * sumYY
+						- (sumY * sumY))) == 0)
+					correlation = 0;
+				correlations.put(entry.getKey(), df.format(correlation) + ","
+						+ n);
 			}
-		
+
 		}
 		return correlations;
+	}
+
+	static HashMap<Integer, String> getRankings(HashMap<String, String> map) {
+
+		HashMap<Integer, String> rankings = new HashMap<Integer, String>();
+
+		for (Entry<String, String> entry : map.entrySet()) {
+
+			String[] keys = entry.getKey().split(",");
+			String[] values = entry.getValue().split(",");
+
+			int key = Integer.parseInt(keys[0]);
+
+			if (rankings.containsKey(key)) {
+				rankings.put(key, rankings.get(key) + "," + values[0] + ","
+						+ keys[1] + "," + values[1]);
+			} else {
+				rankings.put(key, values[0] + "," + keys[1] + "," + values[1]);
+			}
+
+		}
+		return rankings;
+
 	}
 
 	public static void main(String[] args) {
@@ -125,11 +163,22 @@ public class Recommender {
 		HashMap<Integer, String> userRatingMap = groupUserID(dataFile);
 		HashMap<String, String> pairs = pairRatingsPerUser(userRatingMap);
 		HashMap<String, String> correlations = itemCorrelations(pairs);
+		HashMap<Integer, String> rankings = getRankings(correlations);
 
-		for (Entry<String, String> entry : correlations.entrySet()) {
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter("output.txt", "UTF-8");
+			for (Entry<Integer, String> entry : rankings.entrySet()) {
 
-			System.out.println("Key = " + entry.getKey() + ", Value = "
-					+ entry.getValue());
+				writer.println("Key = " + entry.getKey() + ", Value = "
+						+ entry.getValue());
+			}
+			writer.close();
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
 		}
 
 	}
