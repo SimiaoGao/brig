@@ -1,5 +1,5 @@
 
-public class Brig {
+public class Brug {
 
 	/**
 	 * @param args
