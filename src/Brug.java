@@ -21,7 +21,6 @@ public class Brug {
 			while ( (nextLine = in.readLine()) != null) {
 				
 				String[] s = nextLine.split("\t");
-				System.out.println(s[1] + " " + s[2]);
 				if ( map.containsKey(Integer.parseInt(s[0]))) {
 					map.put(Integer.parseInt(s[0]), map.get(Integer.parseInt(s[0])) + s[1] + "," + s[2] + ",");
 				}
@@ -43,8 +42,35 @@ public class Brug {
 	}
 	
 	
+	static HashMap<Integer, String> countRatingsPerUser(HashMap<Integer, String> map) {
+		
+		HashMap<Integer, String> newMap = new HashMap<Integer, String>();
+		
+		
+		for ( Entry<Integer, String> entry : map.entrySet() ) {
+			
+			String[] values = entry.getValue().split(",");
+			int numRatings = 0;
+			int totalRating = 0;
+			
+			for( int i = 1; i < values.length; i += 2) {
+				numRatings++;
+				totalRating += Integer.parseInt(values[i]);
+			}
+			
+			newMap.put(entry.getKey(),  numRatings + "," + totalRating + "," + entry.getValue());			
+		}
+		
+		return newMap;
+	}
 	
 
+	
+	
+	
+	
+	
+	
 	/**
 	 * @param args
 	 */
@@ -53,11 +79,13 @@ public class Brug {
 		final String dataFile = "text_data/u.data";
 		final String itemFile = "text_data/u.item";
 	
-		HashMap<Integer, String> map = groupByUser(dataFile);
+		HashMap<Integer, String> groupByUserMap = groupByUser(dataFile);
+		HashMap<Integer, String> addRatingsCountMap = countRatingsPerUser(groupByUserMap);
 		
-		for (Entry<Integer, String> entry : map.entrySet()) {
+		for (Entry<Integer, String> entry : addRatingsCountMap.entrySet()) {
 		    System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
 		}
+		
 		
 	}
 
