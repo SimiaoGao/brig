@@ -36,6 +36,8 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 					+ "," + s[2]));
 		}
 	}
+	
+	
 
 	public static class PairsReducer extends
 			Reducer<IntWritable, Text, Text, Text> {
@@ -75,17 +77,6 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 		}
 	}
 
-	public static class AllPairsCombiner extends
-			Reducer<Text, Text, Text, Text> {
-		@Override
-		protected void reduce(Text key, Iterable<Text> values, Context ctx)
-				throws IOException, InterruptedException {
-
-			String concat = StringUtils.join(values.iterator(), ",");
-
-			ctx.write(key, new Text(concat));
-		}
-	}
 
 	public static class AllPairsReducer extends Reducer<Text, Text, Text, Text> {
 		@Override
@@ -202,7 +193,6 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 
 		temp.setJarByClass(MovieRecommenderHadoop.class);
 		temp.setMapperClass(IdentityMapper.class);
-		temp.setCombinerClass(AllPairsCombiner.class);
 		temp.setReducerClass(AllPairsReducer.class);
 		temp.setInputFormatClass(TextInputFormat.class);
 		temp.setMapOutputKeyClass(Text.class);
