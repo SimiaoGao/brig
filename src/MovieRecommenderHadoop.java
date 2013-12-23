@@ -1,11 +1,21 @@
 import java.io.IOException;
-import java.util.*;
+import java.util.Iterator;
 
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.conf.*;
-import org.apache.hadoop.io.*;
-import org.apache.hadoop.mapred.*;
-import org.apache.hadoop.util.*;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.FileInputFormat;
+import org.apache.hadoop.mapred.FileOutputFormat;
+import org.apache.hadoop.mapred.JobClient;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.MapReduceBase;
+import org.apache.hadoop.mapred.Mapper;
+import org.apache.hadoop.mapred.OutputCollector;
+import org.apache.hadoop.mapred.Reducer;
+import org.apache.hadoop.mapred.Reporter;
+import org.apache.hadoop.mapred.TextInputFormat;
+import org.apache.hadoop.mapred.TextOutputFormat;
 
 
 
@@ -23,19 +33,14 @@ public class MovieRecommenderHadoop {
 
 	}
 	
-	public static class ItemPairsReducer extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
+	public static class ItemPairsReducer extends MapReduceBase implements Reducer<LongWritable, Text, LongWritable, Text> {
 	
-		public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
-			
-			
-			
+		public void reduce(LongWritable key, Iterator<Text> values, OutputCollector<LongWritable, Text> output, Reporter reporter) throws IOException {
+			output.collect(key, values.next());
 		}
 		
 	}
 	
-		
-		
-		
 	
 	public static void main(String[] args) {
 		
@@ -46,7 +51,19 @@ public class MovieRecommenderHadoop {
 		conf.setOutputValueClass(IntWritable.class);
 		
 		conf.setMapperClass(UserIDMapper.class);
+		conf.setReducerClass(ItemPairsReducer.class);
 		
+		conf.setInputFormat(TextInputFormat.class);
+		conf.setOutputFormat(TextOutputFormat.class);
+		
+		FileInputFormat.setInputPaths(conf, new Path(args[0]));
+		FileOutputFormat.setOutputPath(conf, new Path(args[1]));
+		
+		try {
+			JobClient.runJob(conf);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
