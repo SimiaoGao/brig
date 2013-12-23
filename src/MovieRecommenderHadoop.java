@@ -74,18 +74,18 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 			ctx.write(new Text(s[0]), new Text(s[1]));
 		}
 	}
-	
-	public static class AllPairsCombiner extends Reducer<Text, Text, Text, Text> {
+
+	public static class AllPairsCombiner extends
+			Reducer<Text, Text, Text, Text> {
 		@Override
 		protected void reduce(Text key, Iterable<Text> values, Context ctx)
 				throws IOException, InterruptedException {
-			
+
 			String concat = StringUtils.join(values.iterator(), ",");
-			
+
 			ctx.write(key, new Text(concat));
 		}
 	}
-	
 
 	public static class AllPairsReducer extends Reducer<Text, Text, Text, Text> {
 		@Override
