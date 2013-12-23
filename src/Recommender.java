@@ -114,11 +114,11 @@ public class Recommender {
 				sumXY += x * y;
 				sumX += x;
 				sumY += y;
-				n++;
+				n+=1;
 			}
 
-			if (n > 1) {
-				double correlation = (n * sumXY - sumX * sumY)
+			if (n > 50) {
+				double correlation = (n * sumXY - (sumX * sumY))
 						/ (Math.sqrt(n * sumXX - (sumX * sumX)) * Math.sqrt(n
 								* sumYY - (sumY * sumY)));
 				if ((Math.sqrt(n * sumXX - (sumX * sumX)) * Math.sqrt(n * sumYY
@@ -159,27 +159,27 @@ public class Recommender {
 
 		final String dataFile = "text_data/u.data";
 		final String itemFile = "text_data/u.item";
-
+		
 		HashMap<Integer, String> userRatingMap = groupUserID(dataFile);
 		HashMap<String, String> pairs = pairRatingsPerUser(userRatingMap);
 		HashMap<String, String> correlations = itemCorrelations(pairs);
 		HashMap<Integer, String> rankings = getRankings(correlations);
 
-		PrintWriter writer;
+		
+		System.out.println(rankings.get(50));
+		/*
+		//PrintWriter writer;
 		try {
-			writer = new PrintWriter("output.txt", "UTF-8");
-			for (Entry<Integer, String> entry : rankings.entrySet()) {
+			//writer = new PrintWriter("output.txt", "UTF-8");
 
-				writer.println("Key = " + entry.getKey() + ", Value = "
-						+ entry.getValue());
-			}
-			writer.close();
+			//writer.close();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
+		*/
 
 	}
 
