@@ -124,7 +124,7 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 				n += 1;
 			}
 
-			if (n > 50) {
+			if (n >= 10) {
 				double correlation = (n * sumXY - (sumX * sumY))
 						/ (Math.sqrt(n * sumXX - (sumX * sumX)) * Math.sqrt(n
 								* sumYY - (sumY * sumY)));
@@ -179,6 +179,7 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 		job.setMapOutputValueClass(Text.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(Text.class);
+		job.setNumReduceTasks(1);
 
 		boolean succ = job.waitForCompletion(true);
 		if (!succ) {
@@ -199,6 +200,7 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 		temp.setMapOutputValueClass(Text.class);
 		temp.setOutputKeyClass(Text.class);
 		temp.setOutputValueClass(Text.class);
+		temp.setNumReduceTasks(1);
 
 		succ = temp.waitForCompletion(true);
 		if (!succ) {
@@ -219,6 +221,7 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 		job2.setMapOutputValueClass(Text.class);
 		job2.setOutputKeyClass(Text.class);
 		job2.setOutputValueClass(Text.class);
+		job2.setNumReduceTasks(1);
 
 		succ = job2.waitForCompletion(true);
 		if (!succ) {
