@@ -13,7 +13,7 @@ noid = FILTER noid BY movie1 != movie2;
 grpd = GROUP noid BY (movie1, movie2); 
 rslt = FOREACH grpd GENERATE group, noid.(rating1, rating2); 
 
-STORE rslt INTO 'hbase://pairs' USING org.apache.pig.backend.hadoop.hbase.HBaseStorage('c:rating');
+STORE rslt INTO 'pairs' USING org.apache.pig.backend.hadoop.hbase.HBaseStorage('c:rating');
 
 -- rslt = FOREACH grpd GENERATE group, COUNT(data.movie), SUM(data.rating), udf.BagToString(data.(movie, rating));
 
