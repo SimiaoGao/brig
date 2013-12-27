@@ -12,11 +12,18 @@ Different implementations can be found at src/edu/rutgers/ece451:
 3.  *Brug.java* part of the polyglot implementation of movie recommender that handles correlation calculation using Hadoop.
 
 
+Non-Mapreduce Implementation
+---
 To run *Recommender.java*, 
 
 
+MapReduced Implementation
+---
 To run *MovieRecommenderHadoop.java*,
 
+
+Polyglot Implementation
+---
 Lastly, *Brug.java* is a part of the polyglot version of the program. You need to complete the previous steps in order to run it. In detail:
 
 1.  Set up Pig and HBase, under HBase Shell, type commands: 
