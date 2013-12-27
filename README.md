@@ -12,9 +12,9 @@ Different implementations can be found at src/edu/rutgers/ece451:
 
 Non-Mapreduce Implementation
 ---
-To run *Recommender.java*, simply modify the parameters in the main method.
+To run *Recommender.java*, simply modify the dataFile parameter in the main method.
 
-		modifiy final String dataFile = "text_data/u.data" appropriately 
+		final String dataFile = "text_data/u.data" 
 
 
 MapReduced Implementation
