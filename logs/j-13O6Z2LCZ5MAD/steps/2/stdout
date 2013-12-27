@@ -1,0 +1,28 @@
+Downloading 's3://us-west-2.elasticmapreduce/libs/pig/pig-script' to '/mnt/var/lib/hadoop/steps/2/.'
+2013-12-26 19:20:53 GMT - INFO java version: 1.7
+hadoop version 1.0.3
+java version: 1.7
+pig versions: 0.11.1.1
+2013-12-26 19:20:53 GMT - INFO Running: mkdir -p /home/hadoop/.versions/pig-0.11.1.1/bin
+2013-12-26 19:20:53 GMT - INFO Running: mkdir -p /home/hadoop/.versions/pig-0.11.1.1/lib/pig
+2013-12-26 19:20:53 GMT - INFO Running: hadoop fs -copyToLocal s3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/pig /home/hadoop/.versions/pig-0.11.1.1/bin/pig
+2013-12-26 19:20:56 GMT - INFO Running: hadoop fs -copyToLocal s3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/pig-0.11.1.1-amzn.jar /home/hadoop/.versions/pig-0.11.1.1/lib/pig/pig-0.11.1.1-amzn.jar
+2013-12-26 19:21:01 GMT - INFO Running: hadoop fs -copyToLocal s3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/piggybank-0.11.1.1-amzn.jar /home/hadoop/.versions/pig-0.11.1.1/lib/pig/piggybank-0.11.1.1-amzn.jar
+2013-12-26 19:21:04 GMT - INFO Running: hadoop fs -copyToLocal s3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/jython.jar /home/hadoop/.versions/pig-0.11.1.1/lib/pig/jython.jar
+2013-12-26 19:21:08 GMT - INFO Running: chmod u+x /home/hadoop/.versions/pig-0.11.1.1/bin/pig
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/bin
+2013-12-26 19:21:08 GMT - INFO Running: ln -s /home/hadoop/.versions/pig-0.11.1.1/bin/pig /home/hadoop/bin/pig-0.11.1.1
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/bin
+2013-12-26 19:21:08 GMT - INFO Running: ln -s /home/hadoop/.versions/pig-0.11.1.1/bin/pig /home/hadoop/bin/pig
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/lib/pig/
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/lib/pig
+2013-12-26 19:21:08 GMT - INFO Running: ln -s /home/hadoop/.versions/pig-0.11.1.1/lib/pig/pig-0.11.1.1-amzn.jar /home/hadoop/lib/pig/pig.jar
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/lib/pig
+2013-12-26 19:21:08 GMT - INFO Running: ln -s /home/hadoop/.versions/pig-0.11.1.1/lib/pig/pig-0.11.1.1-amzn.jar /home/hadoop/lib/pig/pig-0.11.1.1-amzn.jar
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/lib/pig
+2013-12-26 19:21:08 GMT - INFO Running: ln -s /home/hadoop/.versions/pig-0.11.1.1/lib/pig/piggybank-0.11.1.1-amzn.jar /home/hadoop/lib/pig/piggybank.jar
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/lib/pig
+2013-12-26 19:21:08 GMT - INFO Running: ln -s /home/hadoop/.versions/pig-0.11.1.1/lib/pig/piggybank-0.11.1.1-amzn.jar /home/hadoop/lib/pig/piggybank-0.11.1.1-amzn.jar
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /home/hadoop/lib
+2013-12-26 19:21:08 GMT - INFO Running: ln -s /home/hadoop/.versions/pig-0.11.1.1/lib/pig/jython.jar /home/hadoop/lib/jython.jar
+2013-12-26 19:21:08 GMT - INFO Running: mkdir -p /mnt/var/log/apps

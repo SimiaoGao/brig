@@ -1,0 +1,5 @@
+13/12/24 05:12:31 INFO s3native.NativeS3FileSystem: Opening 's3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/pig' for reading
+13/12/24 05:12:34 INFO s3native.NativeS3FileSystem: Opening 's3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/pig-0.11.1.1-amzn.jar' for reading
+13/12/24 05:12:38 INFO s3native.NativeS3FileSystem: Opening 's3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/piggybank-0.11.1.1-amzn.jar' for reading
+13/12/24 05:12:41 INFO s3native.NativeS3FileSystem: Opening 's3://us-west-2.elasticmapreduce/libs/pig/0.11.1.1/jython.jar' for reading
+Command exiting with ret '0'

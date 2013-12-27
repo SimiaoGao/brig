@@ -1,0 +1,26 @@
++ /etc/init.d/hadoop-state-pusher-control stop
++ PID_FILE=/mnt/var/run/hadoop-state-pusher/hadoop-state-pusher.pid
++ LOG_FILE=/mnt/var/log/hadoop-state-pusher/hadoop-state-pusher.out
++ SVC_FILE=/mnt/var/lib/hadoop-state-pusher/run-hadoop-state-pusher
++ case $1 in
++ stop
++ echo 0
+/etc/init.d/hadoop-state-pusher-control: line 35: /mnt/var/lib/hadoop-state-pusher/run-hadoop-state-pusher: No such file or directory
++ /etc/init.d/hadoop-state-pusher-control start
++ PID_FILE=/mnt/var/run/hadoop-state-pusher/hadoop-state-pusher.pid
++ LOG_FILE=/mnt/var/log/hadoop-state-pusher/hadoop-state-pusher.out
++ SVC_FILE=/mnt/var/lib/hadoop-state-pusher/run-hadoop-state-pusher
++ case $1 in
++ start
+++ dirname /mnt/var/lib/hadoop-state-pusher/run-hadoop-state-pusher
++ sudo -u hadoop mkdir -p /mnt/var/lib/hadoop-state-pusher
++ echo 1
+++ dirname /mnt/var/run/hadoop-state-pusher/hadoop-state-pusher.pid
++ sudo -u hadoop mkdir -p /mnt/var/run/hadoop-state-pusher
+++ dirname /mnt/var/log/hadoop-state-pusher/hadoop-state-pusher.out
++ sudo -u hadoop mkdir -p /mnt/var/log/hadoop-state-pusher
++ disown %1
++ sleep 5
++ sudo -u hadoop /usr/bin/hadoop-state-pusher -server --pidfile /mnt/var/run/hadoop-state-pusher/hadoop-state-pusher.pid
++ exit 0
+Command exiting with ret '0'

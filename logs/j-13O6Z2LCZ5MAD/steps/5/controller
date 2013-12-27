@@ -1,0 +1,6 @@
+2013-12-26T22:38:30.454Z INFO Fetching jar file.
+2013-12-26T22:38:36.920Z INFO Working dir /mnt/var/lib/hadoop/steps/5
+2013-12-26T22:38:36.921Z INFO Executing /usr/java/latest/bin/java -cp /home/hadoop/conf:/usr/java/latest/lib/tools.jar:/home/hadoop:/home/hadoop/hadoop-tools.jar:/home/hadoop/hadoop-tools-1.0.3.jar:/home/hadoop/hadoop-core-1.0.3.jar:/home/hadoop/hadoop-core.jar:/home/hadoop/lib/*:/home/hadoop/lib/jetty-ext/* -Xmx1000m -Dhadoop.log.dir=/mnt/var/log/hadoop/steps/5 -Dhadoop.log.file=syslog -Dhadoop.home.dir=/home/hadoop -Dhadoop.id.str=hadoop -Dhadoop.root.logger=INFO,DRFA -Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/5/tmp -Djava.library.path=/home/hadoop/native/Linux-amd64-64 org.apache.hadoop.util.RunJar /mnt/var/lib/hadoop/steps/5/brug-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+2013-12-26T22:48:25.557Z INFO Execution ended with ret val 0
+2013-12-26T22:48:28.062Z INFO Step created jobs: job_201312261919_0004
+2013-12-26T22:48:30.565Z INFO Step succeeded

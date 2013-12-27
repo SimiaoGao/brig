@@ -1,0 +1,1 @@
+2013-12-24 05:12:13,793 INFO org.apache.hadoop.fs.s3native.NativeS3FileSystem (main): Opening '/libs/state-pusher/0.1/fetch' for reading

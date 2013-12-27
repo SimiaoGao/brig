@@ -1,0 +1,1 @@
+2013-12-26 19:20:53,686 INFO org.apache.hadoop.fs.s3native.NativeS3FileSystem (main): Opening '/libs/pig/pig-script' for reading
