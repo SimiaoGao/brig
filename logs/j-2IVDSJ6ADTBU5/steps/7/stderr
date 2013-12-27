@@ -1,0 +1,84 @@
+2013-12-27 02:42:03,754 [main] INFO  org.apache.pig.Main - Apache Pig version 0.11.1.1-amzn (rexported) compiled Aug 03 2013, 22:52:20
+2013-12-27 02:42:03,755 [main] INFO  org.apache.pig.Main - Logging error messages to: /mnt/var/lib/hadoop/steps/7/pig_1388112123728.log
+2013-12-27 02:42:05,976 [main] INFO  org.apache.pig.impl.io.FileLocalizer - Downloading file s3://ece451/job/udata-10m-p16-emr.pig to path /tmp/pig8551414468777143610tmp/udata-10m-p16-emr.pig
+2013-12-27 02:42:05,980 [main] INFO  org.apache.hadoop.fs.s3native.NativeS3FileSystem - Opening 's3://ece451/job/udata-10m-p16-emr.pig' for reading
+2013-12-27 02:42:06,154 [main] INFO  org.apache.hadoop.util.NativeCodeLoader - Loaded the native-hadoop library
+2013-12-27 02:42:06,157 [main] INFO  org.apache.pig.Main - Final script path: /tmp/pig8551414468777143610tmp/udata-10m-p16-emr.pig
+2013-12-27 02:42:06,166 [main] INFO  org.apache.pig.impl.util.Utils - Default bootup file /home/hadoop/.pigbootup not found
+2013-12-27 02:42:06,346 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to hadoop file system at: hdfs://172.31.46.229:9000
+2013-12-27 02:42:06,510 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to map-reduce job tracker at: 172.31.46.229:9001
+2013-12-27 02:42:06,813 [main] INFO  org.apache.pig.impl.io.FileLocalizer - Downloading file s3://ece451/job/udata-10m-p16-emr.pig to path /tmp/pig8551414468777143610tmp/udata-10m-p16-emr.pig
+2013-12-27 02:42:06,814 [main] INFO  org.apache.hadoop.fs.s3native.NativeS3FileSystem - Opening 's3://ece451/job/udata-10m-p16-emr.pig' for reading
+2013-12-27 02:42:10,600 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: HASH_JOIN,GROUP_BY,FILTER
+2013-12-27 02:42:10,684 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor - Columns pruned for data: $3
+2013-12-27 02:42:11,590 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MRCompiler - File concatenation threshold: 100 optimistic? false
+2013-12-27 02:42:11,631 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MRCompiler$LastInputStreamingOptimizer - Rewrite: POPackage->POForEach to POJoinPackage
+2013-12-27 02:42:11,640 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size before optimization: 3
+2013-12-27 02:42:11,646 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - Merged 1 diamond splitter.
+2013-12-27 02:42:11,646 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - Merged 1 out of total 2 MR operators.
+2013-12-27 02:42:11,646 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size after optimization: 2
+2013-12-27 02:42:11,726 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig script settings are added to the job
+2013-12-27 02:42:11,740 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2013-12-27 02:42:11,747 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 16
+2013-12-27 02:42:11,748 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - creating jar file Job2649314340953607486.jar
+2013-12-27 02:42:18,575 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - jar file Job2649314340953607486.jar created
+2013-12-27 02:42:18,604 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2013-12-27 02:42:18,615 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2013-12-27 02:42:18,616 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2013-12-27 02:42:18,618 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2013-12-27 02:42:18,734 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2013-12-27 02:42:18,754 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Default number of map tasks: null
+2013-12-27 02:42:18,754 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Setting default number of map tasks based on cluster size to : 32
+2013-12-27 02:42:18,755 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Default number of reduce tasks: 16
+2013-12-27 02:42:18,982 [JobControl] INFO  org.apache.hadoop.security.ShellBasedUnixGroupsMapping - add hadoop to shell userGroupsCache
+2013-12-27 02:42:18,982 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Setting group to hadoop
+2013-12-27 02:42:19,026 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2013-12-27 02:42:19,026 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+2013-12-27 02:42:19,034 [JobControl] INFO  com.hadoop.compression.lzo.GPLNativeCodeLoader - Loaded native gpl library
+2013-12-27 02:42:19,037 [JobControl] WARN  com.hadoop.compression.lzo.LzoCodec - Could not find build properties file with revision hash
+2013-12-27 02:42:19,037 [JobControl] INFO  com.hadoop.compression.lzo.LzoCodec - Successfully loaded & initialized native-lzo library [hadoop-lzo rev UNKNOWN]
+2013-12-27 02:42:19,044 [JobControl] WARN  org.apache.hadoop.io.compress.snappy.LoadSnappy - Snappy native library is available
+2013-12-27 02:42:19,044 [JobControl] INFO  org.apache.hadoop.io.compress.snappy.LoadSnappy - Snappy native library loaded
+2013-12-27 02:42:19,047 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 4
+2013-12-27 02:42:19,053 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2013-12-27 02:42:19,053 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+2013-12-27 02:42:19,054 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 4
+2013-12-27 02:42:19,253 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 0% complete
+2013-12-27 02:42:20,030 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_201312270147_0005
+2013-12-27 02:42:20,031 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases data,joid,noid,not2,nots
+2013-12-27 02:42:20,031 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: data[8,7],nots[-1,-1],not2[5,15],joid[12,7],data[8,7],nots[-1,-1],joid[12,7] C:  R: null[-1,-1],noid[14,7],noid[13,7]
+2013-12-27 02:42:20,031 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - More information at: http://172.31.46.229:9100/jobdetails.jsp?jobid=job_201312270147_0005
+2013-12-27 02:42:44,651 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 7% complete
+2013-12-27 02:42:47,663 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 12% complete
+2013-12-27 02:42:50,676 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 17% complete
+2013-12-27 02:42:53,688 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 21% complete
+2013-12-27 02:42:56,701 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 23% complete
+2013-12-27 02:43:08,751 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 30% complete
+2013-12-27 02:43:11,763 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 31% complete
+2013-12-27 02:43:14,775 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 34% complete
+2013-12-27 02:43:17,787 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 41% complete
+2013-12-27 02:56:10,447 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 47% complete
+2013-12-27 02:58:55,525 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 48% complete
+2013-12-27 03:00:07,755 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 49% complete
+2013-12-27 03:07:17,853 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig script settings are added to the job
+2013-12-27 03:07:17,854 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2013-12-27 03:07:17,855 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 16
+2013-12-27 03:07:17,855 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - creating jar file Job3746592874284851233.jar
+2013-12-27 03:07:24,465 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - jar file Job3746592874284851233.jar created
+2013-12-27 03:07:24,482 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2013-12-27 03:07:24,482 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2013-12-27 03:07:24,482 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2013-12-27 03:07:24,483 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2013-12-27 03:07:24,511 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2013-12-27 03:07:24,518 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Default number of map tasks: null
+2013-12-27 03:07:24,519 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Setting default number of map tasks based on cluster size to : 32
+2013-12-27 03:07:24,519 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Default number of reduce tasks: 16
+2013-12-27 03:07:24,906 [JobControl] INFO  org.apache.hadoop.security.ShellBasedUnixGroupsMapping - add hadoop to shell userGroupsCache
+2013-12-27 03:07:24,906 [JobControl] INFO  org.apache.hadoop.mapred.JobClient - Setting group to hadoop
+2013-12-27 03:07:24,964 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 16
+2013-12-27 03:07:24,965 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 16
+2013-12-27 03:07:25,632 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 492
+2013-12-27 03:07:26,513 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_201312270147_0006
+2013-12-27 03:07:26,513 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases grpd,rslt
+2013-12-27 03:07:26,513 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: grpd[15,7] C:  R: rslt[16,7]
+2013-12-27 03:07:26,513 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - More information at: http://172.31.46.229:9100/jobdetails.jsp?jobid=job_201312270147_0006

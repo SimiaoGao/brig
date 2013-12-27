@@ -1,0 +1,8 @@
+Downloading 's3://us-west-2.elasticmapreduce/libs/pig/pig-script' to '/mnt/var/lib/hadoop/steps/6/.'
+2013-12-27 02:22:31 GMT - ERROR missing required argument base-path
+2013-12-27 02:22:31 GMT - INFO java version: 1.7
+hadoop version 1.0.3
+java version: 1.7
+pig versions: 0.11.1.1
+2013-12-27 02:22:31 GMT - INFO Running: /home/hadoop/bin/pig-0.11.1.1 -l . '-f' 's3://ece451/job/udata-10m-p16-emr.pig'
+2013-12-27 02:22:45 GMT - ERROR Error executing cmd: /home/hadoop/bin/pig-0.11.1.1 -l . '-f' 's3://ece451/job/udata-10m-p16-emr.pig'

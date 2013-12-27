@@ -1,0 +1,6 @@
+2013-12-27T01:51:22.871Z INFO Fetching jar file.
+2013-12-27T01:51:25.494Z INFO Working dir /mnt/var/lib/hadoop/steps/4
+2013-12-27T01:51:25.494Z INFO Executing /usr/java/latest/bin/java -cp /home/hadoop/conf:/usr/java/latest/lib/tools.jar:/home/hadoop:/home/hadoop/hadoop-tools.jar:/home/hadoop/hadoop-tools-1.0.3.jar:/home/hadoop/hadoop-core-1.0.3.jar:/home/hadoop/hadoop-core.jar:/home/hadoop/lib/*:/home/hadoop/lib/jetty-ext/* -Xmx1000m -Dhadoop.log.dir=/mnt/var/log/hadoop/steps/4 -Dhadoop.log.file=syslog -Dhadoop.home.dir=/home/hadoop -Dhadoop.id.str=hadoop -Dhadoop.root.logger=INFO,DRFA -Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/4/tmp -Djava.library.path=/home/hadoop/native/Linux-amd64-64 org.apache.hadoop.util.RunJar /mnt/var/lib/hadoop/steps/4/script-runner.jar s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.11.1.1 --args -f s3://ece451/job/udata-1m-p16-emr.pig
+2013-12-27T02:07:41.773Z INFO Execution ended with ret val 0
+2013-12-27T02:07:44.279Z INFO Step created jobs: job_201312270147_0001,job_201312270147_0002,job_201312270147_0003
+2013-12-27T02:07:51.810Z INFO Step succeeded

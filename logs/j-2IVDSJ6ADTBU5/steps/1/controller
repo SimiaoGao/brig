@@ -1,0 +1,6 @@
+2013-12-27T01:47:56.678Z INFO Fetching jar file.
+2013-12-27T01:47:59.276Z INFO Working dir /mnt/var/lib/hadoop/steps/1
+2013-12-27T01:47:59.276Z INFO Executing /usr/java/latest/bin/java -cp /home/hadoop/conf:/usr/java/latest/lib/tools.jar:/home/hadoop:/home/hadoop/hadoop-tools.jar:/home/hadoop/hadoop-tools-1.0.3.jar:/home/hadoop/hadoop-core-1.0.3.jar:/home/hadoop/hadoop-core.jar:/home/hadoop/lib/*:/home/hadoop/lib/jetty-ext/* -Xmx1000m -Dhadoop.log.dir=/mnt/var/log/hadoop/steps/1 -Dhadoop.log.file=syslog -Dhadoop.home.dir=/home/hadoop -Dhadoop.id.str=hadoop -Dhadoop.root.logger=INFO,DRFA -Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/1/tmp -Djava.library.path=/home/hadoop/native/Linux-amd64-64 org.apache.hadoop.util.RunJar /mnt/var/lib/hadoop/steps/1/script-runner.jar s3://us-west-2.elasticmapreduce/libs/state-pusher/0.1/fetch
+2013-12-27T01:48:07.784Z INFO Execution ended with ret val 0
+2013-12-27T01:48:10.430Z INFO Step created jobs: 
+2013-12-27T01:48:10.431Z INFO Step succeeded

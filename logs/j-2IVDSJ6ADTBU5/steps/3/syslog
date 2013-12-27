@@ -1,0 +1,3 @@
+2013-12-27 01:48:37,991 INFO emr.hbase.backup.HBaseConnector (main): Setting hbase-master to be 172.31.46.229
+2013-12-27 01:48:37,995 INFO emr.hbase.backup.Main (main): Starting HMaster
+2013-12-27 01:48:38,014 INFO emr.hbase.backup.HBaseConnector (main): Setting hbase-master to be 172.31.46.229

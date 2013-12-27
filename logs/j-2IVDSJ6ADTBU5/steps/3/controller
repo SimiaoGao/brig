@@ -1,0 +1,6 @@
+2013-12-27T01:48:34.047Z INFO Fetching jar file.
+2013-12-27T01:48:36.560Z INFO Working dir /mnt/var/lib/hadoop/steps/3
+2013-12-27T01:48:36.560Z INFO Executing /usr/java/latest/bin/java -cp /home/hadoop/conf:/usr/java/latest/lib/tools.jar:/home/hadoop:/home/hadoop/hadoop-tools.jar:/home/hadoop/hadoop-tools-1.0.3.jar:/home/hadoop/hadoop-core-1.0.3.jar:/home/hadoop/hadoop-core.jar:/home/hadoop/lib/*:/home/hadoop/lib/jetty-ext/* -Xmx1000m -Dhadoop.log.dir=/mnt/var/log/hadoop/steps/3 -Dhadoop.log.file=syslog -Dhadoop.home.dir=/home/hadoop -Dhadoop.id.str=hadoop -Dhadoop.root.logger=INFO,DRFA -Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/3/tmp -Djava.library.path=/home/hadoop/native/Linux-amd64-64 org.apache.hadoop.util.RunJar /home/hadoop/lib/hbase-0.92.0.jar emr.hbase.backup.Main --start-master
+2013-12-27T01:48:38.563Z INFO Execution ended with ret val 0
+2013-12-27T01:48:41.068Z INFO Step created jobs: 
+2013-12-27T01:48:41.068Z INFO Step succeeded
