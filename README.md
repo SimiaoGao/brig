@@ -12,18 +12,14 @@ Different implementations can be found at src/edu/rutgers/ece451:
 
 Non-Mapreduce Implementation
 ---
-To run *Recommender.java*, simply modify the dataFile parameter in the main method.
-
-		final String dataFile = "text_data/u.data" 
+To run *Recommender.java*, simply modify the `dataFile` parameter in the main method.
 
 
 MapReduced Implementation
 ---
 To run *MovieRecommenderHadoop.java*, 
 
-1. Create a Jar file of *MovieRecommenderHadoop.java*
-
-		generate Recommender.jar using eclipse
+1. Create a Jar file of *MovieRecommenderHadoop.java* by generating Recommender.jar using eclipse
 	
 2. Place the input file into the Hadoop HDFS.
 	
@@ -31,7 +27,7 @@ To run *MovieRecommenderHadoop.java*,
 
 2. Pass arguments, first being the input file location and second being the output file location. Example:
 	
-		hadoop jar Recommender.jar u.data output_location
+		hadoop jar Recommender.jar u.data <output location>
 	
 Polyglot Implementation
 ---
