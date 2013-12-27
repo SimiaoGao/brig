@@ -14,6 +14,8 @@ Non-Mapreduce Implementation
 ---
 To run *Recommender.java*, simply modify the parameters in the main method.
 
+		modifiy final String dataFile = "text_data/u.data" appropriately 
+
 
 MapReduced Implementation
 ---
