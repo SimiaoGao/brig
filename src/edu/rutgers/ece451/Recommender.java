@@ -118,7 +118,7 @@ public class Recommender {
 				n+=1;
 			}
 
-			if (n > 50) {
+			if (n > 9) {
 				double correlation = (n * sumXY - (sumX * sumY))
 						/ (Math.sqrt(n * sumXX - (sumX * sumX)) * Math.sqrt(n
 								* sumYY - (sumY * sumY)));
@@ -161,11 +161,16 @@ public class Recommender {
 		final String dataFile = "text_data/u.data";
 		final String itemFile = "text_data/u.item";
 		
+		long startTime = System.currentTimeMillis();
+		
 		HashMap<Integer, String> userRatingMap = groupUserID(dataFile);
 		HashMap<String, String> pairs = pairRatingsPerUser(userRatingMap);
 		HashMap<String, String> correlations = itemCorrelations(pairs);
 		HashMap<Integer, String> rankings = getRankings(correlations);
 
+		long endTime = System.currentTimeMillis();
+		
+		System.out.println("That took " + (endTime - startTime) + " milliseconds");
 		
 		System.out.println(rankings.get(50));
 		/*

@@ -115,7 +115,7 @@ public class Brug {
 				TOP_TABLE_NAME, // output table
 				MyTableReducer.class, // reducer class
 				job);
-		job.setNumReduceTasks(1);
+		job.setNumReduceTasks(16);
 
 		boolean b = job.waitForCompletion(true);
 		if (!b) {
