@@ -135,7 +135,7 @@ public class MovieRecommenderHadoop extends Configured implements Tool {
 				n += 1;
 			}
 
-			if (n > 50) {
+			if (n > 9) {
 				double correlation = (n * sumXY - (sumX * sumY))
 						/ (Math.sqrt(n * sumXX - (sumX * sumX)) * Math.sqrt(n
 								* sumYY - (sumY * sumY)));
