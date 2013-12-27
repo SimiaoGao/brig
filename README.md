@@ -21,15 +21,15 @@ To run *MovieRecommenderHadoop.java*,
 
 1. Create a Jar file of *MovieRecommenderHadoop.java*
 
-	generate Recommender.jar using eclipse
+		generate Recommender.jar using eclipse
 	
 2. Place the input file into the Hadoop HDFS.
 	
-	hadoop fs -put u.data
+		hadoop fs -put u.data
 
 2. Pass arguments, first being the input file location and second being the output file location. Example:
 	
-	hadoop jar Recommender.jar u.data output_location
+		hadoop jar Recommender.jar u.data output_location
 	
 Polyglot Implementation
 ---
