@@ -6,9 +6,7 @@ A simple MapReduce program that correlates similar movies together.
 Different implementations can be found at src/edu/rutgers/ece451:
 
 1.  *Recommender.java* a non-mapreduced implementation of movie recommender
-
 2.  *MovieRecommenderHadoop.java* a hadoop-powered implementation of movie recommender
-
 3.  *Brug.java* part of the polyglot implementation of movie recommender that handles correlation calculation using Hadoop.
 
 
