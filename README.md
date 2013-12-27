@@ -12,14 +12,25 @@ Different implementations can be found at src/edu/rutgers/ece451:
 
 Non-Mapreduce Implementation
 ---
-To run *Recommender.java*, 
+To run *Recommender.java*, simply modify the parameters in the main method.
 
 
 MapReduced Implementation
 ---
-To run *MovieRecommenderHadoop.java*,
+To run *MovieRecommenderHadoop.java*, 
 
+1. Create a Jar file of *MovieRecommenderHadoop.java*
 
+	generate Recommender.jar using eclipse
+	
+2. Place the input file into the Hadoop HDFS.
+	
+	hadoop fs -put u.data
+
+2. Pass arguments, first being the input file location and second being the output file location. Example:
+	
+	hadoop jar Recommender.jar u.data output_location
+	
 Polyglot Implementation
 ---
 Lastly, *Brug.java* is a part of the polyglot version of the program. You need to complete the previous steps in order to run it. In detail:
